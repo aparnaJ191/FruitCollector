@@ -45,19 +45,23 @@ class Form{
         });
 
         this.reset.mousePressed(() => {
-            player.updateCount(0);
+            var players = playerCount;
             game.update(0);
-            player.index =1;
-            player.name="";
-            player.distance=0;
-            player.score=0;
-            player.update();
-            player.index =2;
-            player.name="";
-            player.distance=0;
-            player.score=0;
-            player.update();
-        
+            player.updateCount(0);
+            console.log(playerCount);
+            for(var i=0; i<players;i++)
+            {
+                console.log(i+1);
+                player.index=(i+1); 
+                player.name="";
+                player.distance=0;
+                player.score=0;
+                player.update();
+            }  
+            this.button.show();
+            this.input.show();
+            this.title.show();       
+                           
             
         });
 
